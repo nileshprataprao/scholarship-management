@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/jaeger:2.5.0
+    ports:
+      - "4317:4317"
+      - "16686:16686"
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml

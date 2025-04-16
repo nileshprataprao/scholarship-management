@@ -1,0 +1,27 @@
+POST http://ec2-44-204-56-199.compute-1.amazonaws.com:8080/scm/user
+Content-Type: application/json
+
+{
+    "firstName": "f1",
+    "lastName": "l1",
+    "email": "test10@test.com",
+    "phoneNumber": "1234567890",
+    "securityQuestion1": "q1",
+    "answer1": "a1",
+    "securityQuestion2": "q2",
+    "answer2": "a2",
+    "password": "12345",
+    "role": "ROLE_SCH_ADMIN"
+}
+
+
+### create token
+POST http://ec2-44-204-56-199.compute-1.amazonaws.com:8080/scm/user/token
+Content-Type: application/json
+
+{
+    "email": "test1@test.com",
+    "password": "12345"
+}
+
+
